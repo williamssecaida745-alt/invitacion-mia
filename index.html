@@ -1,652 +1,336 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="theme-color" content="#79c9ff">
-
   <meta name="description" content="¡Estás invitado al cumpleaños número 6 de Mia! Una aventura inspirada en Toy Story.">
-
-
 
   <title>¡Mia cumple 6 años! 🚀</title>
 
-
-
   <link rel="stylesheet" href="./style.css">
-
   <script src="./script.js" defer></script>
-
 </head>
-
-
 
 <body>
 
-
-
-  <!-- PORTADA -->
-
+  <!-- PORTADA CON NUBES Y PERSONAJES FLOTANDO -->
   <div class="portada" id="portada">
-
+    <!-- NUBES DE FONDO -->
     <div class="nube nube-1" aria-hidden="true"></div>
-
     <div class="nube nube-2" aria-hidden="true"></div>
-
     <div class="nube nube-3" aria-hidden="true"></div>
+    <div class="nube nube-4" aria-hidden="true"></div>
 
-
+    <!-- PERSONAJES FLOTANDO EN EL FONDO -->
+    <img src="https://pngimg.com/uploads/toy_story/toy_story_PNG35.png" class="personaje-fondo woody-flotante" alt="Woody" aria-hidden="true">
+    <img src="https://pngimg.com/uploads/toy_story/toy_story_PNG21.png" class="personaje-fondo buzz-flotante" alt="Buzz Lightyear" aria-hidden="true">
+    <img src="https://pngimg.com/uploads/toy_story/toy_story_PNG19.png" class="personaje-fondo jessie-flotante" alt="Jessie" aria-hidden="true">
+    <img src="https://pngimg.com/uploads/toy_story/toy_story_PNG50.png" class="personaje-fondo alien-flotante" alt="Alien Pizza Planet" aria-hidden="true">
+    <img src="https://pngimg.com/uploads/toy_story/toy_story_PNG10.png" class="personaje-fondo rex-flotante" alt="Rex" aria-hidden="true">
 
     <div class="portada-tarjeta">
-
       <div class="estrella" aria-hidden="true">⭐</div>
-
-
 
       <p class="etiqueta">¡ATENCIÓN, JUGUETES!</p>
 
-
-
       <h1>¡Tienes una<br>misión especial!</h1>
 
-
-
       <p class="portada-nombre">
-
         Mia cumple <span>6 años</span>
-
       </p>
-
-
 
       <div class="juguetes" aria-hidden="true">🤠 🚀 🧸</div>
 
-
-
       <p class="portada-texto">
-
         Prepárate para una aventura<br>
-
         ¡hasta el infinito y más allá!
-
       </p>
 
-
-
       <button
-
         id="abrirInvitacion"
-
         class="boton boton-abrir"
-
         type="button"
-
       >
-
         Abrir invitación ✨
-
       </button>
-
     </div>
 
-
-
     <p class="portada-pie">
-
       UNA AVENTURA LLENA DE MAGIA Y DIVERSIÓN
-
     </p>
-
   </div>
 
 
-
-
-
   <!-- INVITACIÓN -->
-
   <main class="invitacion" id="invitacion">
 
-
-
     <!-- ENCABEZADO PRINCIPAL -->
-
     <header class="hero">
 
-
-
       <!-- DECORACIONES ESPACIALES -->
-
       <div class="decoracion-espacial" aria-hidden="true">
-
         <span class="decoracion estrella-espacial estrella-1">✦</span>
-
         <span class="decoracion estrella-espacial estrella-2">★</span>
-
         <span class="decoracion estrella-espacial estrella-3">✧</span>
-
         <span class="decoracion alien alien-1">👽</span>
-
         <span class="decoracion alien alien-2">👽</span>
-
         <span class="decoracion cohete-espacial">🚀</span>
-
         <span class="decoracion sombrero-woody">🤠</span>
-
         <span class="decoracion planeta-espacial">🪐</span>
-
       </div>
-
-
 
       <div class="insignia">⭐ ¡ESTÁS INVITADO! ⭐</div>
 
-
-
       <p class="texto-superior">¡Prepárate para despegar!</p>
-
-
 
       <h1>¡Mia cumple<br><span>6 años!</span></h1>
 
-
-
       <p class="frase">
-
         Hay un amigo en mí… ¡y queremos celebrar contigo!
-
       </p>
 
-
-
       <div class="ilustracion" aria-label="Decoración de juguetes">
-
         <span class="juguete woody" aria-hidden="true">🤠</span>
-
         <span class="juguete buzz" aria-hidden="true">🚀</span>
-
         <span class="juguete oso" aria-hidden="true">🧸</span>
-
         <span class="juguete estrella" aria-hidden="true">⭐</span>
-
       </div>
-
-
 
       <!-- FECHA -->
-
       <div class="fecha-tarjeta">
-
         <p class="dia-semana">SÁBADO</p>
-
         <strong>07</strong>
-
         <p class="mes">NOVIEMBRE · 2026</p>
-
       </div>
-
-
 
       <a class="boton boton-azul" href="#detalles">
-
         Ver los detalles ↓
-
       </a>
 
-
-
       <!-- REPRODUCTOR DE MÚSICA -->
-
       <div class="contenedor-musica">
-
         <p class="texto-musica">
-
           🎶 ¡Ponle música a esta aventura!
-
         </p>
 
-
-
         <button
-
           type="button"
-
           id="botonMusica"
-
           class="boton-musica"
-
           aria-pressed="false"
-
         >
-
           🎵 Reproducir música
-
         </button>
-
       </div>
 
-
-
       <audio
-
         id="musicaInvitacion"
-
         src="./musica.mp3"
-
         loop
-
         preload="none"
-
       ></audio>
-
-
 
     </header>
 
 
-
-
-
     <!-- MENSAJE DE BIENVENIDA -->
-
     <section class="seccion mensaje" id="bienvenida">
-
       <div class="icono-seccion" aria-hidden="true">☁️</div>
-
-
 
       <h2>¡Una aventura te espera!</h2>
 
-
-
       <p>
-
         Nuestro pequeño mundo se llenará de alegría, juegos y diversión.
-
         Acompáñanos a celebrar los 6 añitos de Mia.
-
       </p>
 
-
-
       <div class="decoracion-estrellas" aria-hidden="true">
-
         ✦ ⭐ ✧ 🚀 ✦
-
       </div>
-
     </section>
-
-
-
 
 
     <!-- DETALLES DEL EVENTO Y CUENTA REGRESIVA -->
-
     <section class="seccion" id="detalles">
-
       <div class="icono-seccion" aria-hidden="true">⏳</div>
-
-
 
       <h2>Cuenta regresiva</h2>
 
-
-
       <p class="subtitulo">¡La misión está por comenzar!</p>
 
-
-
       <div
-
         class="cuenta-regresiva"
-
         id="cuentaRegresiva"
-
         aria-label="Cuenta regresiva para el cumpleaños"
-
         aria-live="off"
-
       >
-
         <div class="contador">
-
           <strong id="dias">00</strong>
-
           <span>Días</span>
-
         </div>
 
-
-
         <div class="contador">
-
           <strong id="horas">00</strong>
-
           <span>Horas</span>
-
         </div>
 
-
-
         <div class="contador">
-
           <strong id="minutos">00</strong>
-
           <span>Minutos</span>
-
         </div>
-
-
 
         <div class="contador">
-
           <strong id="segundos">00</strong>
-
           <span>Segundos</span>
-
         </div>
-
       </div>
-
-
 
       <div class="detalles-lista">
 
-
-
         <!-- FECHA -->
-
         <article class="detalle">
-
           <div class="detalle-icono" aria-hidden="true">📅</div>
 
-
-
           <div>
-
             <h3>Fecha de la misión</h3>
-
             <p>Sábado 7 de noviembre de 2026</p>
-
           </div>
-
         </article>
-
-
 
         <!-- HORA -->
-
         <article class="detalle">
-
           <div class="detalle-icono" aria-hidden="true">🕒</div>
 
-
-
           <div>
-
             <h3>Hora de inicio</h3>
-
             <p>3:00 de la tarde</p>
-
           </div>
-
         </article>
-
-
 
         <!-- UBICACIÓN -->
-
         <article class="detalle">
-
           <div class="detalle-icono" aria-hidden="true">📍</div>
 
-
-
           <div>
-
             <h3>Punto de encuentro</h3>
 
-
-
             <p>
-
               Avenida Bolívar 30-58, Diagonal 1, zona 3
-
             </p>
 
-
-
             <a
-
               class="enlace-mapa boton-waze"
-
               href="https://waze.com/ul/h9fxehj875"
-
               target="_blank"
-
               rel="noopener noreferrer"
-
             >
-
               🚗 Llegar con Waze ↗
-
             </a>
-
           </div>
-
         </article>
 
-
-
       </div>
-
     </section>
-
-
-
 
 
     <!-- REGALITOS -->
-
     <section class="seccion regalos-card" id="regalitos">
-
       <div class="regalos-icono" aria-hidden="true">🎁</div>
-
-
 
       <span class="regalos-etiqueta">UN DETALLE ESPECIAL</span>
 
-
-
       <h2>¡Un pequeño detalle para Mia!</h2>
 
-
-
       <p class="regalos-mensaje">
-
         Tu presencia es el mejor regalo.
-
         Pero, si deseas tener un detalle con Mia,
-
         agradecemos de corazón los regalitos en
-
         <strong>efectivo o ropita</strong>.
-
       </p>
-
-
 
       <div class="regalos-decoracion" aria-hidden="true">
-
         <span>⭐</span>
-
         <span>👗</span>
-
         <span>💛</span>
-
       </div>
 
-
-
       <p class="regalos-gracias">
-
         ¡Gracias por ser parte de esta aventura tan especial!
-
       </p>
-
     </section>
-
-
-
 
 
     <!-- CONFIRMACIÓN DE ASISTENCIA -->
-
     <section class="seccion confirmacion" id="confirmacion">
-
       <div class="icono-seccion" aria-hidden="true">💌</div>
-
-
 
       <h2>¿Te unes a la aventura?</h2>
 
-
-
       <p>
-
         Indícanos cuántas personas nos acompañarán.
-
       </p>
-
-
 
       <div class="cantidad-asistentes">
 
-
-
         <label for="adultos">
-
           👨‍👩‍👧‍👦 ¿Cuántos adultos asistirán?
-
         </label>
-
-
 
         <select id="adultos" name="adultos">
-
           <option value="0">0 adultos</option>
-
           <option value="1">1 adulto</option>
-
           <option value="2" selected>2 adultos</option>
-
           <option value="3">3 adultos</option>
-
           <option value="4">4 adultos</option>
-
           <option value="5 o más">5 o más adultos</option>
-
         </select>
-
-
 
         <label for="ninos">
-
           🧸 ¿Cuántos niños asistirán?
-
         </label>
 
-
-
         <select id="ninos" name="ninos">
-
           <option value="0">0 niños</option>
-
           <option value="1" selected>1 niño</option>
-
           <option value="2">2 niños</option>
-
           <option value="3">3 niños</option>
-
           <option value="4">4 niños</option>
-
           <option value="5 o más">5 o más niños</option>
-
         </select>
-
-
 
       </div>
 
-
-
       <a
-
         class="boton boton-verde"
-
         id="confirmar"
-
         href="#confirmacion"
-
       >
-
         ¡Confirmar asistencia! 💚
-
       </a>
 
-
-
       <p class="nota-confirmacion">
-
         ¡Nos encantará celebrar contigo!
-
       </p>
-
     </section>
 
 
-
-
-
     <!-- PIE DE PÁGINA -->
-
     <footer>
-
       <div class="footer-estrellas" aria-hidden="true">
-
         ⭐ 🚀 ☁️ 🤠 ⭐
-
       </div>
-
-
 
       <p>Hecho con mucho amor para Mia</p>
 
-
-
       <p class="footer-frase">
-
         ¡Hasta el infinito y más allá!
-
       </p>
-
     </footer>
-
-
 
   </main>
 
-
-
 </body>
-
 </html>
-
 
 
