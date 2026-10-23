@@ -7,7 +7,7 @@ const confirmar = document.getElementById("confirmar");
 // Escribe aquí el número con código de país, solo números.
 // Guatemala: 502 seguido de los 8 dígitos.
 // Ejemplo de formato: 502XXXXXXXX
-const numeroWhatsApp = "";
+const numeroWhatsApp = "50235804695";
 
 const fechaEvento = new Date(2026, 10, 7, 15, 0, 0);
 let temporizador = null;
