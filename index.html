@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,10 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#79c9ff">
   <meta name="description" content="¡Estás invitado al cumpleaños número 6 de Mia! Una aventura inspirada en Toy Story.">
+
   <title>¡Mia cumple 6 años! 🚀</title>
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
 
   <!-- PORTADA -->
@@ -21,15 +25,27 @@
 
     <div class="portada-tarjeta">
       <div class="estrella">⭐</div>
+
       <p class="etiqueta">¡ATENCIÓN, JUGUETES!</p>
+
       <h1>¡Tienes una<br>misión especial!</h1>
-      <p class="portada-nombre">Mia cumple <span>6 años</span></p>
+
+      <p class="portada-nombre">
+        Mia cumple <span>6 años</span>
+      </p>
+
       <div class="juguetes">🤠 🚀 🧸</div>
+
       <p class="portada-texto">
         Prepárate para una aventura<br>
         ¡hasta el infinito y más allá!
       </p>
-      <button id="abrirInvitacion" class="boton boton-abrir">
+
+      <button
+        id="abrirInvitacion"
+        class="boton boton-abrir"
+        type="button"
+      >
         Abrir invitación ✨
       </button>
     </div>
@@ -39,13 +55,17 @@
     </p>
   </div>
 
+
   <!-- INVITACIÓN -->
   <main class="invitacion" id="invitacion">
 
     <header class="hero">
       <div class="insignia">⭐ ¡ESTÁS INVITADO! ⭐</div>
+
       <p class="texto-superior">¡Prepárate para despegar!</p>
+
       <h1>¡Mia cumple<br><span>6 años!</span></h1>
+
       <p class="frase">
         Hay un amigo en mí… ¡y queremos celebrar contigo!
       </p>
@@ -66,48 +86,84 @@
       <a class="boton boton-azul" href="#detalles">
         Ver los detalles ↓
       </a>
+
+      <!-- REPRODUCTOR DE MÚSICA -->
+      <div class="contenedor-musica">
+        <p class="texto-musica">
+          🎶 ¡Ponle música a esta aventura!
+        </p>
+
+        <button
+          type="button"
+          id="botonMusica"
+          class="boton-musica"
+          aria-pressed="false"
+        >
+          🎵 Reproducir música
+        </button>
+      </div>
+
+      <audio
+        id="musicaInvitacion"
+        src="./musica.mp3"
+        loop
+        preload="auto"
+      ></audio>
     </header>
+
 
     <!-- MENSAJE -->
     <section class="seccion mensaje">
       <div class="icono-seccion">☁️</div>
+
       <h2>¡Una aventura te espera!</h2>
+
       <p>
         Nuestro pequeño mundo se llenará de alegría, juegos y diversión.
         Acompáñanos a celebrar los 6 añitos de Mia.
       </p>
+
       <div class="decoracion-estrellas">✦ ⭐ ✧ 🚀 ✦</div>
     </section>
+
 
     <!-- DETALLES -->
     <section class="seccion" id="detalles">
       <div class="icono-seccion">⏳</div>
+
       <h2>Cuenta regresiva</h2>
+
       <p class="subtitulo">¡La misión está por comenzar!</p>
 
       <div class="cuenta-regresiva" id="cuentaRegresiva">
+
         <div class="contador">
           <strong id="dias">00</strong>
           <span>Días</span>
         </div>
+
         <div class="contador">
           <strong id="horas">00</strong>
           <span>Horas</span>
         </div>
+
         <div class="contador">
           <strong id="minutos">00</strong>
           <span>Minutos</span>
         </div>
+
         <div class="contador">
           <strong id="segundos">00</strong>
           <span>Segundos</span>
         </div>
+
       </div>
 
       <div class="detalles-lista">
 
         <article class="detalle">
           <div class="detalle-icono">📅</div>
+
           <div>
             <h3>Fecha de la misión</h3>
             <p>Sábado 7 de noviembre de 2026</p>
@@ -116,6 +172,7 @@
 
         <article class="detalle">
           <div class="detalle-icono">🕒</div>
+
           <div>
             <h3>Hora de inicio</h3>
             <p>3:00 de la tarde</p>
@@ -124,31 +181,45 @@
 
         <article class="detalle">
           <div class="detalle-icono">📍</div>
+
           <div>
             <h3>Punto de encuentro</h3>
-            <p>Avenida Bolívar 30-58, Diagonal 1, zona 3</p>
+
+            <p>
+              Avenida Bolívar 30-58, Diagonal 1, zona 3
+            </p>
 
             <a
               class="enlace-mapa boton-waze"
               href="https://waze.com/ul/h9fxehj875"
               target="_blank"
               rel="noopener noreferrer"
-            >🚗 Llegar con Waze ↗</a>
+            >
+              🚗 Llegar con Waze ↗
+            </a>
           </div>
         </article>
 
       </div>
     </section>
 
+
     <!-- CONFIRMACIÓN -->
-    <section class="seccion confirmacion">
+    <section class="seccion confirmacion" id="confirmacion">
       <div class="icono-seccion">💌</div>
+
       <h2>¿Te unes a la aventura?</h2>
-      <p>Indícanos cuántas personas nos acompañarán.</p>
+
+      <p>
+        Indícanos cuántas personas nos acompañarán.
+      </p>
 
       <div class="cantidad-asistentes">
 
-        <label for="adultos">👨‍👩‍👧‍👦 ¿Cuántos adultos asistirán?</label>
+        <label for="adultos">
+          👨‍👩‍👧‍👦 ¿Cuántos adultos asistirán?
+        </label>
+
         <select id="adultos" name="adultos">
           <option value="0">0 adultos</option>
           <option value="1">1 adulto</option>
@@ -158,7 +229,10 @@
           <option value="5 o más">5 o más adultos</option>
         </select>
 
-        <label for="ninos">🧸 ¿Cuántos niños asistirán?</label>
+        <label for="ninos">
+          🧸 ¿Cuántos niños asistirán?
+        </label>
+
         <select id="ninos" name="ninos">
           <option value="0">0 niños</option>
           <option value="1" selected>1 niño</option>
@@ -170,7 +244,11 @@
 
       </div>
 
-      <a class="boton boton-verde" id="confirmar" href="#confirmacion">
+      <a
+        class="boton boton-verde"
+        id="confirmar"
+        href="#confirmacion"
+      >
         ¡Confirmar asistencia! 💚
       </a>
 
@@ -179,15 +257,21 @@
       </p>
     </section>
 
+
     <!-- PIE DE PÁGINA -->
     <footer>
       <div class="footer-estrellas">⭐ 🚀 ☁️ 🤠 ⭐</div>
+
       <p>Hecho con mucho amor para Mia</p>
-      <p class="footer-frase">¡Hasta el infinito y más allá!</p>
+
+      <p class="footer-frase">
+        ¡Hasta el infinito y más allá!
+      </p>
     </footer>
 
   </main>
 
 </body>
 </html>
+
 
