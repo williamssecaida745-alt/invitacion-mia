@@ -57,8 +57,7 @@ select {
   display: grid;
   place-items: center;
   padding: 24px 16px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   background:
     radial-gradient(ellipse at 15% 15%, #ffffff 0 4%, transparent 5%),
     linear-gradient(180deg, #68bdf4 0%, #b7e7ff 62%, #eaf8ff 100%);
@@ -129,11 +128,64 @@ select {
   right: 12px;
   bottom: 10px;
   left: 12px;
+  z-index: 2;
   color: #205b86;
   text-align: center;
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 1px;
+}
+
+/* =====================================
+   PERSONAJES DE TOY STORY EN LA PORTADA
+===================================== */
+
+.personaje-fondo {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.15));
+  opacity: 0.95;
+}
+
+.woody-flotante {
+  bottom: 8%;
+  left: 4%;
+  width: 140px;
+  transform: rotate(-10deg);
+  animation: flotar 3.5s ease-in-out infinite;
+}
+
+.buzz-flotante {
+  top: 10%;
+  right: 4%;
+  width: 150px;
+  transform: rotate(12deg);
+  animation: flotarEspacial 4s ease-in-out infinite;
+}
+
+.jessie-flotante {
+  bottom: 10%;
+  right: 4%;
+  width: 130px;
+  transform: rotate(8deg);
+  animation: flotar 3s ease-in-out infinite alternate;
+}
+
+.alien-flotante {
+  top: 12%;
+  left: 5%;
+  width: 110px;
+  transform: rotate(-15deg);
+  animation: flotarEspacial 3s ease-in-out infinite;
+}
+
+.rex-flotante {
+  bottom: 2%;
+  left: 48%;
+  width: 120px;
+  transform: translateX(-50%);
+  animation: flotar 4s ease-in-out infinite;
 }
 
 /* =====================================
@@ -145,7 +197,7 @@ select {
   width: 150px;
   height: 48px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   animation: deriva 8s ease-in-out infinite alternate;
 }
 
@@ -187,6 +239,13 @@ select {
   left: 5%;
   transform: scale(0.7);
   animation-delay: 2s;
+}
+
+.nube-4 {
+  bottom: 25%;
+  right: 8%;
+  transform: scale(0.75);
+  animation-delay: 3s;
 }
 
 /* =====================================
@@ -398,9 +457,6 @@ select:focus-visible {
   font-size: 2rem;
   animation: girarEspacial 8s linear infinite;
 }
-
-/* Mantiene el contenido del encabezado
-   por encima de las decoraciones. */
 
 .hero > :not(.decoracion-espacial) {
   position: relative;
@@ -952,6 +1008,34 @@ footer p {
 ===================================== */
 
 @media (max-width: 600px) {
+  .woody-flotante {
+    width: 90px;
+    left: 2%;
+    bottom: 5%;
+  }
+
+  .buzz-flotante {
+    width: 95px;
+    right: 2%;
+    top: 6%;
+  }
+
+  .jessie-flotante {
+    width: 85px;
+    right: 2%;
+    bottom: 5%;
+  }
+
+  .alien-flotante {
+    width: 75px;
+    left: 2%;
+    top: 8%;
+  }
+
+  .rex-flotante {
+    display: none;
+  }
+
   .estrella-espacial.estrella-1 {
     left: 4%;
     font-size: 1.5rem;
