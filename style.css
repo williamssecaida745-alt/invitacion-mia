@@ -45,6 +45,67 @@ select {
 }
 
 /* =====================================
+   PERSONAJES DE TOY STORY A LOS COSTADOS
+===================================== */
+
+.personajes-costado-contenedor {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.personaje-costado {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.2));
+}
+
+.personaje-costado img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Posiciones Izquierda */
+.izquierdo-arriba {
+  top: 15%;
+  left: 20px;
+  animation: flotarCostado 3.5s ease-in-out infinite;
+}
+
+.izquierdo-abajo {
+  bottom: 12%;
+  left: 20px;
+  animation: flotarCostado 4s ease-in-out infinite 1s;
+}
+
+/* Posiciones Derecha */
+.derecho-arriba {
+  top: 15%;
+  right: 20px;
+  animation: flotarCostado 3.8s ease-in-out infinite 0.5s;
+}
+
+.derecho-abajo {
+  bottom: 12%;
+  right: 20px;
+  animation: flotarCostado 4.2s ease-in-out infinite 1.5s;
+}
+
+@keyframes flotarCostado {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+/* =====================================
    PORTADA
 ===================================== */
 
@@ -994,6 +1055,20 @@ footer p {
    ADAPTACIÓN PARA TABLET Y CELULARES
 ===================================== */
 
+@media (max-width: 1100px) {
+  .personaje-costado img {
+    width: 100px;
+  }
+  .izquierdo-arriba, .izquierdo-abajo { left: 10px; }
+  .derecho-arriba, .derecho-abajo { right: 10px; }
+}
+
+@media (max-width: 800px) {
+  .personajes-costado-contenedor {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .woody-flotante {
     font-size: 2.8rem;
@@ -1144,7 +1219,6 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
-
 
 
 
