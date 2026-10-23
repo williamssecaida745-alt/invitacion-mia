@@ -1,36 +1,53 @@
 
 
+
 const portada = document.getElementById("portada");
 const invitacion = document.getElementById("invitacion");
 const botonAbrir = document.getElementById("abrirInvitacion");
 const confirmar = document.getElementById("confirmar");
 
-// Número de WhatsApp con código de país.
-// Guatemala: 502 + 8 dígitos.
+// ===================================
+// CONFIGURACIÓN DE WHATSAPP
+// ===================================
+
+// Guatemala: código de país 502 + 8 dígitos.
 const numeroWhatsApp = "50235804695";
+
+// ===================================
+// FECHA DEL EVENTO
+// ===================================
 
 const fechaEvento = new Date(2026, 10, 7, 15, 0, 0);
 let temporizador = null;
 
 // ===================================
+// ELEMENTOS DE MÚSICA
+// ===================================
+
+const botonMusica = document.getElementById("botonMusica");
+const musicaInvitacion = document.getElementById("musicaInvitacion");
+
+// ===================================
 // ABRIR LA INVITACIÓN
 // ===================================
 
-botonAbrir.addEventListener("click", () => {
-  portada.classList.add("oculta");
-  invitacion.classList.add("visible");
+if (botonAbrir && invitacion && portada) {
+  botonAbrir.addEventListener("click", () => {
+    portada.classList.add("oculta");
+    invitacion.classList.add("visible");
 
-  actualizarContador();
+    actualizarContador();
 
-  if (temporizador === null) {
-    temporizador = setInterval(actualizarContador, 1000);
-  }
+    if (temporizador === null) {
+      temporizador = setInterval(actualizarContador, 1000);
+    }
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
-});
+}
 
 // ===================================
 // CUENTA REGRESIVA
@@ -86,54 +103,89 @@ function actualizarContador() {
 // CONFIRMACIÓN POR WHATSAPP
 // ===================================
 
-confirmar.addEventListener("click", (evento) => {
-  evento.preventDefault();
+if (confirmar) {
+  confirmar.addEventListener("click", (evento) => {
+    evento.preventDefault();
 
-  // Obtener las cantidades seleccionadas.
-  const selectorAdultos = document.getElementById("adultos");
-  const selectorNinos = document.getElementById("ninos");
+    const selectorAdultos = document.getElementById("adultos");
+    const selectorNinos = document.getElementById("ninos");
 
-  if (!selectorAdultos || !selectorNinos) {
-    alert(
-      "No se encontraron los selectores de adultos y niños. " +
-      "Verifica que estén incluidos en index.html."
+    if (!selectorAdultos || !selectorNinos) {
+      alert(
+        "No se encontraron los selectores de adultos y niños. " +
+        "Verifica que estén incluidos en index.html."
+      );
+      return;
+    }
+
+    const adultos = selectorAdultos.value;
+    const ninos = selectorNinos.value;
+
+    if (!/^502\d{8}$/.test(numeroWhatsApp)) {
+      alert("Revisa el número de WhatsApp configurado en script.js.");
+      return;
+    }
+
+    const mensaje =
+      "¡Hola! Quiero confirmar mi asistencia al cumpleaños " +
+      "número 6 de Mia, el sábado 7 de noviembre de 2026 " +
+      "a las 3:00 p. m.\n\n" +
+      "👨‍👩‍👧‍👦 Cantidad de adultos: " + adultos + "\n" +
+      "🧸 Cantidad de niños: " + ninos + "\n\n" +
+      "¡Muchas gracias! 🎂🚀";
+
+    const urlWhatsApp =
+      "https://wa.me/" +
+      numeroWhatsApp +
+      "?text=" +
+      encodeURIComponent(mensaje);
+
+    window.open(urlWhatsApp, "_blank", "noopener,noreferrer");
+
+    lanzarConfeti();
+  });
+}
+
+// ===================================
+// REPRODUCTOR DE MÚSICA
+// ===================================
+
+if (botonMusica && musicaInvitacion) {
+  botonMusica.addEventListener("click", async () => {
+    if (musicaInvitacion.paused) {
+      try {
+        await musicaInvitacion.play();
+
+        botonMusica.textContent = "⏸️ Pausar música";
+        botonMusica.setAttribute("aria-pressed", "true");
+      } catch (error) {
+        console.error("Error al reproducir la música:", error);
+
+        alert(
+          "No se pudo reproducir la música. Comprueba que el archivo " +
+          "musica.mp3 esté subido correctamente a GitHub y que su " +
+          "nombre coincida con el de index.html."
+        );
+      }
+    } else {
+      musicaInvitacion.pause();
+
+      botonMusica.textContent = "🎵 Reproducir música";
+      botonMusica.setAttribute("aria-pressed", "false");
+    }
+  });
+
+  musicaInvitacion.addEventListener("ended", () => {
+    botonMusica.textContent = "🎵 Reproducir música";
+    botonMusica.setAttribute("aria-pressed", "false");
+  });
+
+  musicaInvitacion.addEventListener("error", () => {
+    console.error(
+      "No se pudo cargar el audio. Revisa la ruta del archivo."
     );
-    return;
-  }
-
-  const adultos = selectorAdultos.value;
-  const ninos = selectorNinos.value;
-
-  // Verificar el número de WhatsApp.
-  if (!/^502\d{8}$/.test(numeroWhatsApp)) {
-    alert(
-      "Revisa el número de WhatsApp configurado en script.js."
-    );
-    return;
-  }
-
-  // Crear el mensaje con las cantidades seleccionadas.
-  const mensaje =
-    "¡Hola! Quiero confirmar mi asistencia al cumpleaños " +
-    "número 6 de Mia, el sábado 7 de noviembre de 2026 " +
-    "a las 3:00 p. m.\n\n" +
-    "👨‍👩‍👧‍👦 Cantidad de adultos: " + adultos + "\n" +
-    "🧸 Cantidad de niños: " + ninos + "\n\n" +
-    "¡Muchas gracias! 🎂🚀";
-
-  // Preparar el enlace de WhatsApp.
-  const urlWhatsApp =
-    "https://wa.me/" +
-    numeroWhatsApp +
-    "?text=" +
-    encodeURIComponent(mensaje);
-
-  // Abrir WhatsApp con el mensaje preparado.
-  window.open(urlWhatsApp, "_blank", "noopener,noreferrer");
-
-  // Lanzar confeti al confirmar.
-  lanzarConfeti();
-});
+  });
+}
 
 // ===================================
 // CONFETI
@@ -181,4 +233,5 @@ function lanzarConfeti() {
     }, 3500);
   }
 }
+
 
