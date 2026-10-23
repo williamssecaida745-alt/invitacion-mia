@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#79c9ff">
+  <meta name="description" content="¡Estás invitado al cumpleaños número 6 de Mia! Una aventura inspirada en Toy Story.">
+  <title>¡Mia cumple 6 años! 🚀</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="portada" id="portada">
+    <div class="nube nube-1"></div>
+    <div class="nube nube-2"></div>
+    <div class="nube nube-3"></div>
+
+    <div class="portada-tarjeta">
+      <div class="estrella">⭐</div>
+      <p class="etiqueta">¡ATENCIÓN, JUGUETES!</p>
+      <h1>¡Tienes una<br>misión especial!</h1>
+      <p class="portada-nombre">Mia cumple <span>6 años</span></p>
+      <div class="juguetes">🤠 🚀 🧸</div>
+      <p class="portada-texto">Prepárate para una aventura<br>¡hasta el infinito y más allá!</p>
+      <button id="abrirInvitacion" class="boton boton-abrir">
+        Abrir invitación ✨
+      </button>
+    </div>
+    <p class="portada-pie">UNA AVENTURA LLENA DE MAGIA Y DIVERSIÓN</p>
+  </div>
+
+  <!-- INVITACIÓN -->
+  <main class="invitacion" id="invitacion">
+    <header class="hero">
+      <div class="insignia">⭐ ¡ESTÁS INVITADO! ⭐</div>
+      <p class="texto-superior">¡Prepárate para despegar!</p>
+      <h1>¡Mia cumple<br><span>6 años!</span></h1>
+      <p class="frase">Hay un amigo en mí… ¡y queremos celebrar contigo!</p>
+
+      <div class="ilustracion" aria-label="Decoración de juguetes">
+        <span class="juguete woody">🤠</span>
+        <span class="juguete buzz">🚀</span>
+        <span class="juguete oso">🧸</span>
+        <span class="juguete estrella">⭐</span>
+      </div>
+
+      <div class="fecha-tarjeta">
+        <p class="dia-semana">SÁBADO</p>
+        <strong>07</strong>
+        <p class="mes">NOVIEMBRE · 2026</p>
+      </div>
+      <a class="boton boton-azul" href="#detalles">Ver los detalles ↓</a>
+    </header>
+
+    <section class="seccion mensaje">
+      <div class="icono-seccion">☁️</div>
+      <h2>¡Una aventura te espera!</h2>
+      <p>
+        Nuestro pequeño mundo se llenará de alegría, juegos y diversión.
+        Acompáñanos a celebrar los 6 añitos de Mia.
+      </p>
+      <div class="decoracion-estrellas">✦ ⭐ ✧ 🚀 ✦</div>
+    </section>
+
+    <section class="seccion" id="detalles">
+      <div class="icono-seccion">⏳</div>
+      <h2>Cuenta regresiva</h2>
+      <p class="subtitulo">¡La misión está por comenzar!</p>
+
+      <div class="cuenta-regresiva" id="cuentaRegresiva">
+        <div class="contador">
+          <strong id="dias">00</strong>
+          <span>Días</span>
+        </div>
+        <div class="contador">
+          <strong id="horas">00</strong>
+          <span>Horas</span>
+        </div>
+        <div class="contador">
+          <strong id="minutos">00</strong>
+          <span>Minutos</span>
+        </div>
+        <div class="contador">
+          <strong id="segundos">00</strong>
+          <span>Segundos</span>
+        </div>
+      </div>
+
+      <div class="detalles-lista">
+        <article class="detalle">
+          <div class="detalle-icono">📅</div>
+          <div>
+            <h3>Fecha de la misión</h3>
+            <p>Sábado 7 de noviembre de 2026</p>
+          </div>
+        </article>
+
+        <article class="detalle">
+          <div class="detalle-icono">🕒</div>
+          <div>
+            <h3>Hora de inicio</h3>
+            <p>3:00 de la tarde</p>
+          </div>
+        </article>
+
+        <article class="detalle">
+          <div class="detalle-icono">📍</div>
+          <div>
+            <h3>Punto de encuentro</h3>
+            <p>Avenida Bolívar 30-58, Diagonal 1, zona 3</p>
+            <a
+              class="enlace-mapa"
+              href="https://www.google.com/maps/search/?api=1&query=Avenida+Bolivar+30-58+Diagonal+1+zona+3+Guatemala"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Consultar ubicación en Google Maps ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion confirmacion">
+      <div class="icono-seccion">💌</div>
+      <h2>¿Te unes a la aventura?</h2>
+      <p>Confirma tu asistencia y forma parte de esta misión especial.</p>
+      <a class="boton boton-verde" id="confirmar" href="#confirmar">
+        ¡Confirmar asistencia! 💚
+      </a>
+      <p class="nota-confirmacion">¡Nos encantará celebrar contigo!</p>
+    </section>
+
+    <footer>
+      <div class="footer-estrellas">⭐ 🚀 ☁️ 🤠 ⭐</div>
+      <p>Hecho con mucho amor para Mia</p>
+      <p class="footer-frase">¡Hasta el infinito y más allá!</p>
+    </footer>
+  </main>
+
+</body>
+</html>
