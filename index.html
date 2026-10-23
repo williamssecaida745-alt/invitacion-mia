@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,8 +10,8 @@
 
   <title>¡Mia cumple 6 años! 🚀</title>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +33,7 @@
         Mia cumple <span>6 años</span>
       </p>
 
-      <div class="juguetes">🤠 🚀 🧸</div>
+      <div class="juguetes" aria-hidden="true">🤠 🚀 🧸</div>
 
       <p class="portada-texto">
         Prepárate para una aventura<br>
@@ -59,6 +58,7 @@
   <!-- INVITACIÓN -->
   <main class="invitacion" id="invitacion">
 
+    <!-- ENCABEZADO -->
     <header class="hero">
       <div class="insignia">⭐ ¡ESTÁS INVITADO! ⭐</div>
 
@@ -112,8 +112,8 @@
     </header>
 
 
-    <!-- MENSAJE -->
-    <section class="seccion mensaje">
+    <!-- MENSAJE DE BIENVENIDA -->
+    <section class="seccion mensaje" id="bienvenida">
       <div class="icono-seccion">☁️</div>
 
       <h2>¡Una aventura te espera!</h2>
@@ -123,11 +123,13 @@
         Acompáñanos a celebrar los 6 añitos de Mia.
       </p>
 
-      <div class="decoracion-estrellas">✦ ⭐ ✧ 🚀 ✦</div>
+      <div class="decoracion-estrellas" aria-hidden="true">
+        ✦ ⭐ ✧ 🚀 ✦
+      </div>
     </section>
 
 
-    <!-- DETALLES -->
+    <!-- DETALLES DEL EVENTO -->
     <section class="seccion" id="detalles">
       <div class="icono-seccion">⏳</div>
 
@@ -161,6 +163,7 @@
 
       <div class="detalles-lista">
 
+        <!-- FECHA -->
         <article class="detalle">
           <div class="detalle-icono">📅</div>
 
@@ -170,6 +173,7 @@
           </div>
         </article>
 
+        <!-- HORA -->
         <article class="detalle">
           <div class="detalle-icono">🕒</div>
 
@@ -179,6 +183,7 @@
           </div>
         </article>
 
+        <!-- UBICACIÓN -->
         <article class="detalle">
           <div class="detalle-icono">📍</div>
 
@@ -204,7 +209,34 @@
     </section>
 
 
-    <!-- CONFIRMACIÓN -->
+    <!-- REGALITOS -->
+    <section class="seccion regalos-card" id="regalitos">
+      <div class="regalos-icono" aria-hidden="true">🎁</div>
+
+      <span class="regalos-etiqueta">UN DETALLE ESPECIAL</span>
+
+      <h2>¡Un pequeño detalle para Mia!</h2>
+
+      <p class="regalos-mensaje">
+        Tu presencia es el mejor regalo.
+        Pero, si deseas tener un detalle con Mia,
+        agradecemos de corazón los regalitos en
+        <strong>efectivo o ropita</strong>.
+      </p>
+
+      <div class="regalos-decoracion" aria-hidden="true">
+        <span>⭐</span>
+        <span>👗</span>
+        <span>💛</span>
+      </div>
+
+      <p class="regalos-gracias">
+        ¡Gracias por ser parte de esta aventura tan especial!
+      </p>
+    </section>
+
+
+    <!-- CONFIRMACIÓN DE ASISTENCIA -->
     <section class="seccion confirmacion" id="confirmacion">
       <div class="icono-seccion">💌</div>
 
@@ -260,7 +292,9 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-      <div class="footer-estrellas">⭐ 🚀 ☁️ 🤠 ⭐</div>
+      <div class="footer-estrellas" aria-hidden="true">
+        ⭐ 🚀 ☁️ 🤠 ⭐
+      </div>
 
       <p>Hecho con mucho amor para Mia</p>
 
@@ -273,5 +307,6 @@
 
 </body>
 </html>
+
 
 
