@@ -57,6 +57,7 @@ select {
   display: grid;
   place-items: center;
   padding: 24px 16px;
+  overflow-x: hidden;
   overflow-y: auto;
   background:
     radial-gradient(ellipse at 15% 15%, #ffffff 0 4%, transparent 5%),
@@ -123,45 +124,6 @@ select {
   line-height: 1.7;
 }
 
-/* =====================================
-   BOTONES GENERALES
-===================================== */
-
-.boton {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 14px 22px;
-  border: 0;
-  border-radius: 999px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 900;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.boton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(30, 85, 130, 0.2);
-}
-
-.boton:focus-visible,
-a:focus-visible,
-select:focus-visible {
-  outline: 3px solid #f2b92d;
-  outline-offset: 4px;
-}
-
-.boton-abrir {
-  margin-top: 15px;
-  color: #4d3900;
-  background: var(--amarillo);
-  box-shadow: 0 5px 0 #e9b82f;
-}
-
 .portada-pie {
   position: absolute;
   right: 12px;
@@ -175,7 +137,7 @@ select:focus-visible {
 }
 
 /* =====================================
-   NUBES
+   NUBES DE LA PORTADA
 ===================================== */
 
 .nube {
@@ -228,11 +190,67 @@ select:focus-visible {
 }
 
 /* =====================================
+   BOTONES GENERALES
+===================================== */
+
+.boton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(30, 85, 130, 0.2);
+}
+
+.boton:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid #f2b92d;
+  outline-offset: 4px;
+}
+
+.boton-abrir {
+  margin-top: 15px;
+  color: #4d3900;
+  background: var(--amarillo);
+  box-shadow: 0 5px 0 #e9b82f;
+}
+
+.boton-azul {
+  color: white;
+  background: var(--azul);
+  box-shadow: 0 5px 0 var(--azul-oscuro);
+}
+
+.boton-verde {
+  margin-top: 15px;
+  color: #164f38;
+  background: #94e7b7;
+  box-shadow: 0 5px 0 #58bd88;
+}
+
+.boton-verde:hover {
+  background: #a8f0c6;
+}
+
+/* =====================================
    CONTENEDOR DE LA INVITACIÓN
 ===================================== */
 
 .invitacion {
-  width: min(100% - 28px, 760px);
+  width: min(calc(100% - 28px), 760px);
   margin: 20px auto;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.94);
@@ -250,11 +268,12 @@ select:focus-visible {
 }
 
 /* =====================================
-   ENCABEZADO
+   ENCABEZADO PRINCIPAL
 ===================================== */
 
 .hero {
   position: relative;
+  isolation: isolate;
   padding: 48px 24px 42px;
   overflow: hidden;
   text-align: center;
@@ -300,6 +319,95 @@ select:focus-visible {
 }
 
 /* =====================================
+   DECORACIONES ESPACIALES
+===================================== */
+
+.decoracion-espacial {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decoracion {
+  position: absolute;
+  display: block;
+  user-select: none;
+}
+
+.estrella-espacial {
+  color: #f7bd35;
+  text-shadow: 0 0 12px rgba(255, 207, 76, 0.8);
+  animation: brilloEspacial 2s ease-in-out infinite alternate;
+}
+
+.estrella-espacial.estrella-1 {
+  top: 12%;
+  left: 9%;
+  font-size: 2rem;
+}
+
+.estrella-espacial.estrella-2 {
+  top: 27%;
+  right: 10%;
+  font-size: 1.7rem;
+  animation-delay: 0.6s;
+}
+
+.estrella-espacial.estrella-3 {
+  bottom: 18%;
+  left: 14%;
+  font-size: 2.2rem;
+  animation-delay: 1s;
+}
+
+.alien {
+  font-size: 2.2rem;
+  animation: flotarEspacial 3s ease-in-out infinite;
+}
+
+.alien-1 {
+  top: 42%;
+  left: 3%;
+}
+
+.alien-2 {
+  right: 4%;
+  bottom: 8%;
+  animation-delay: 1.2s;
+}
+
+.cohete-espacial {
+  top: 10%;
+  right: 24%;
+  font-size: 2rem;
+  animation: despegarEspacial 4s ease-in-out infinite;
+}
+
+.sombrero-woody {
+  bottom: 8%;
+  left: 5%;
+  font-size: 2.2rem;
+  animation: flotarEspacial 3.5s ease-in-out infinite;
+}
+
+.planeta-espacial {
+  top: 52%;
+  right: 5%;
+  font-size: 2rem;
+  animation: girarEspacial 8s linear infinite;
+}
+
+/* Mantiene el contenido del encabezado
+   por encima de las decoraciones. */
+
+.hero > :not(.decoracion-espacial) {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================
    DECORACIÓN DE JUGUETES
 ===================================== */
 
@@ -334,7 +442,7 @@ select:focus-visible {
 }
 
 /* =====================================
-   FECHA
+   FECHA DEL CUMPLEAÑOS
 ===================================== */
 
 .fecha-tarjeta {
@@ -360,12 +468,6 @@ select:focus-visible {
   color: #e65c82;
   font-size: 5rem;
   line-height: 1.1;
-}
-
-.boton-azul {
-  color: white;
-  background: var(--azul);
-  box-shadow: 0 5px 0 var(--azul-oscuro);
 }
 
 /* =====================================
@@ -436,7 +538,7 @@ select:focus-visible {
 }
 
 /* =====================================
-   SECCIONES
+   SECCIONES GENERALES
 ===================================== */
 
 .seccion {
@@ -558,7 +660,7 @@ select:focus-visible {
 }
 
 /* =====================================
-   TARJETA DE REGALITOS PARA MIA
+   TARJETA DE REGALITOS
 ===================================== */
 
 .regalos-card {
@@ -574,9 +676,6 @@ select:focus-visible {
   border-radius: 26px;
   box-shadow: 0 8px 0 rgba(35, 139, 210, 0.15);
 }
-
-/* Evita que el estilo general de las secciones
-   cambie la separación de los elementos de regalos. */
 
 .regalos-card .regalos-icono {
   display: block;
@@ -656,8 +755,6 @@ select:focus-visible {
   background: linear-gradient(180deg, #fff, #fff8e4);
 }
 
-/* SELECTORES DE ADULTOS Y NIÑOS */
-
 .cantidad-asistentes {
   width: 100%;
   max-width: 420px;
@@ -706,19 +803,6 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
-/* BOTÓN DE WHATSAPP */
-
-.boton-verde {
-  margin-top: 15px;
-  color: #164f38;
-  background: #94e7b7;
-  box-shadow: 0 5px 0 #58bd88;
-}
-
-.boton-verde:hover {
-  background: #a8f0c6;
-}
-
 .nota-confirmacion {
   font-size: 0.9rem;
 }
@@ -765,7 +849,7 @@ footer p {
 }
 
 /* =====================================
-   ANIMACIONES
+   ANIMACIONES GENERALES
 ===================================== */
 
 @keyframes aparecer {
@@ -818,8 +902,79 @@ footer p {
 }
 
 /* =====================================
-   ADAPTACIÓN PARA CELULARES
+   ANIMACIONES ESPACIALES
 ===================================== */
+
+@keyframes brilloEspacial {
+  from {
+    opacity: 0.55;
+    transform: scale(0.85) rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.15) rotate(10deg);
+  }
+}
+
+@keyframes flotarEspacial {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes despegarEspacial {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-12deg);
+  }
+
+  50% {
+    transform: translate(-8px, -12px) rotate(5deg);
+  }
+}
+
+@keyframes girarEspacial {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================
+   ADAPTACIÓN PARA TABLET Y CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+  .estrella-espacial.estrella-1 {
+    left: 4%;
+    font-size: 1.5rem;
+  }
+
+  .estrella-espacial.estrella-2 {
+    right: 4%;
+    font-size: 1.4rem;
+  }
+
+  .alien {
+    font-size: 1.7rem;
+  }
+
+  .cohete-espacial,
+  .planeta-espacial {
+    font-size: 1.5rem;
+  }
+
+  .sombrero-woody {
+    font-size: 1.8rem;
+  }
+}
 
 @media (max-width: 480px) {
   .portada-tarjeta {
@@ -909,7 +1064,7 @@ footer p {
 }
 
 /* =====================================
-   RESPETO A LA PREFERENCIA DE MOVIMIENTO
+   ACCESIBILIDAD: REDUCIR MOVIMIENTO
 ===================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -922,6 +1077,7 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+
 
 
 
