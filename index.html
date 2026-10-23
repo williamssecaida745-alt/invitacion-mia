@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +7,12 @@
   <meta name="theme-color" content="#79c9ff">
   <meta name="description" content="¡Estás invitado al cumpleaños número 6 de Mia! Una aventura inspirada en Toy Story.">
 
-  <title>¡Mia cumple 6 años! 🚀</title>
+  <title>¡Mia cumple 6 años! 🚀 Toy Story Edition</title>
+
+  <!-- Fuente de Google Fonts estilo manuscrito infantil para el toque "ANDY" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
@@ -16,41 +20,62 @@
 
 <body>
 
-  <!-- PORTADA -->
+  <!-- PORTADA ESTILO HABITACIÓN DE ANDY -->
   <div class="portada" id="portada">
     <div class="nube nube-1" aria-hidden="true"></div>
     <div class="nube nube-2" aria-hidden="true"></div>
     <div class="nube nube-3" aria-hidden="true"></div>
 
-    <div class="portada-tarjeta">
-      <div class="estrella" aria-hidden="true">⭐</div>
+    <div class="portada-tarjeta ts-card">
+      
+      <!-- ESTRELLA DE SHERIFF MEJORADA -->
+      <div class="estrella-sheriff-container" aria-hidden="true">
+        <svg class="estrella-svg" viewBox="0 0 100 100">
+          <polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" fill="#ffd700" stroke="#d4a017" stroke-width="3"/>
+          <circle cx="50" cy="50" r="18" fill="#d4a017"/>
+          <text x="50" y="53" font-size="7" font-weight="bold" fill="#fff" text-anchor="middle">SHERIFF</text>
+        </svg>
+      </div>
 
-      <p class="etiqueta">¡ATENCIÓN, JUGUETES!</p>
+      <p class="etiqueta ts-badge">⭐ ¡ATENCIÓN, JUGUETES! ⭐</p>
 
-      <h1>¡Tienes una<br>misión especial!</h1>
+      <h1 class="titulo-toy-story">
+        ¡Tienes una<br>misión especial!
+      </h1>
 
-      <p class="portada-nombre">
-        Mia cumple <span>6 años</span>
-      </p>
+      <div class="portada-nombre-contenedor">
+        <p class="portada-nombre">
+          Mia cumple <span class="edad-highlight">6 años</span>
+        </p>
+        <span class="firma-andy">M i a</span>
+      </div>
 
-      <div class="juguetes" aria-hidden="true">🤠 🚀 🧸</div>
+      <!-- PERSONAJES VECTORIALES TOY STORY -->
+      <div class="juguetes-ilustracion" aria-hidden="true">
+        <!-- Woody -->
+        <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f920.svg" alt="Woody" class="personaje-img woody-anim">
+        <!-- Cohete Buzz -->
+        <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f680.svg" alt="Buzz Rocket" class="personaje-img buzz-anim">
+        <!-- Alien Pizza Planet -->
+        <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f47d.svg" alt="Alien" class="personaje-img alien-anim">
+      </div>
 
       <p class="portada-texto">
         Prepárate para una aventura<br>
-        ¡hasta el infinito y más allá!
+        <strong>¡Hasta el infinito y más allá! 🚀</strong>
       </p>
 
       <button
         id="abrirInvitacion"
-        class="boton boton-abrir"
+        class="boton boton-abrir ts-boton-woody"
         type="button"
       >
-        Abrir invitación ✨
+        <span>Abrir invitación ✨</span>
       </button>
     </div>
 
     <p class="portada-pie">
-      UNA AVENTURA LLENA DE MAGIA Y DIVERSIÓN
+      🤠 UNA AVENTURA EN EL COMANDO ESTELAR Y EL OESTE 🚀
     </p>
   </div>
 
@@ -59,52 +84,65 @@
   <main class="invitacion" id="invitacion">
 
     <!-- ENCABEZADO PRINCIPAL -->
-    <header class="hero">
+    <header class="hero ts-hero">
 
-      <!-- DECORACIONES ESPACIALES -->
+      <!-- DECORACIONES ESPACIALES Y DEL OESTE -->
       <div class="decoracion-espacial" aria-hidden="true">
         <span class="decoracion estrella-espacial estrella-1">✦</span>
         <span class="decoracion estrella-espacial estrella-2">★</span>
-        <span class="decoracion estrella-espacial estrella-3">✧</span>
         <span class="decoracion alien alien-1">👽</span>
-        <span class="decoracion alien alien-2">👽</span>
         <span class="decoracion cohete-espacial">🚀</span>
         <span class="decoracion sombrero-woody">🤠</span>
         <span class="decoracion planeta-espacial">🪐</span>
       </div>
 
-      <div class="insignia">⭐ ¡ESTÁS INVITADO! ⭐</div>
+      <div class="insignia ts-insignia">⭐ ¡REUNIÓN DE JUGUETES! ⭐</div>
 
-      <p class="texto-superior">¡Prepárate para despegar!</p>
+      <p class="texto-superior">¡Atención Comando Estelar!</p>
 
-      <h1>¡Mia cumple<br><span>6 años!</span></h1>
+      <h1 class="ts-titulo-principal">
+        ¡Mia cumple<br><span class="texto-destacado-6">6 AÑOS!</span>
+      </h1>
 
-      <p class="frase">
-        Hay un amigo en mí… ¡y queremos celebrar contigo!
+      <p class="frase ts-frase">
+        "Hay un amigo en mí..." ¡y queremos celebrar contigo! 🎸
       </p>
 
-      <div class="ilustracion" aria-label="Decoración de juguetes">
-        <span class="juguete woody" aria-hidden="true">🤠</span>
-        <span class="juguete buzz" aria-hidden="true">🚀</span>
-        <span class="juguete oso" aria-hidden="true">🧸</span>
-        <span class="juguete estrella" aria-hidden="true">⭐</span>
+      <!-- GALERÍA DE JUGUETES Y ELEMENTOS DE TOY STORY -->
+      <div class="ilustracion ts-galeria" aria-label="Juguetes de Toy Story">
+        <div class="card-juguete">
+          <span class="emoji-large">🤠</span>
+          <small>Woody</small>
+        </div>
+        <div class="card-juguete">
+          <span class="emoji-large">🚀</span>
+          <small>Buzz</small>
+        </div>
+        <div class="card-juguete">
+          <span class="emoji-large">👽</span>
+          <small>Alien</small>
+        </div>
+        <div class="card-juguete">
+          <span class="emoji-large">🦖</span>
+          <small>Rex</small>
+        </div>
       </div>
 
-      <!-- FECHA -->
-      <div class="fecha-tarjeta">
+      <!-- FECHA ESTILO PLACA DE SHERIFF -->
+      <div class="fecha-tarjeta ts-fecha-placa">
         <p class="dia-semana">SÁBADO</p>
-        <strong>07</strong>
+        <strong class="numero-dia">07</strong>
         <p class="mes">NOVIEMBRE · 2026</p>
       </div>
 
-      <a class="boton boton-azul" href="#detalles">
-        Ver los detalles ↓
+      <a class="boton boton-azul ts-boton-buzz" href="#detalles">
+        Ver los detalles de la misión ↓
       </a>
 
       <!-- REPRODUCTOR DE MÚSICA -->
-      <div class="contenedor-musica">
+      <div class="contenedor-musica ts-musica-box">
         <p class="texto-musica">
-          🎶 ¡Ponle música a esta aventura!
+          🎶 ¡Ponle banda sonora a la aventura!
         </p>
 
         <button
@@ -113,7 +151,7 @@
           class="boton-musica"
           aria-pressed="false"
         >
-          🎵 Reproducir música
+          🎵 Reproducir "Hay un amigo en mí"
         </button>
       </div>
 
@@ -128,32 +166,32 @@
 
 
     <!-- MENSAJE DE BIENVENIDA -->
-    <section class="seccion mensaje" id="bienvenida">
+    <section class="seccion mensaje ts-seccion-nubes" id="bienvenida">
       <div class="icono-seccion" aria-hidden="true">☁️</div>
 
-      <h2>¡Una aventura te espera!</h2>
+      <h2>¡Una aventura en el cuarto de juguetes!</h2>
 
       <p>
-        Nuestro pequeño mundo se llenará de alegría, juegos y diversión.
+        Nuestro mundo se llenará de alegría, juegos, Pizza Planet y muchísima diversión.
         Acompáñanos a celebrar los 6 añitos de Mia.
       </p>
 
       <div class="decoracion-estrellas" aria-hidden="true">
-        ✦ ⭐ ✧ 🚀 ✦
+        🤠 ⭐ 🚀 👽 🧸
       </div>
     </section>
 
 
     <!-- DETALLES DEL EVENTO Y CUENTA REGRESIVA -->
-    <section class="seccion" id="detalles">
-      <div class="icono-seccion" aria-hidden="true">⏳</div>
+    <section class="seccion ts-seccion-detalles" id="detalles">
+      <div class="icono-seccion" aria-hidden="true">⏱️</div>
 
-      <h2>Cuenta regresiva</h2>
+      <h2>Cuenta Regresiva del Comando Estelar</h2>
 
-      <p class="subtitulo">¡La misión está por comenzar!</p>
+      <p class="subtitulo">¡Despegue en T-Minus!</p>
 
       <div
-        class="cuenta-regresiva"
+        class="cuenta-regresiva ts-countdown"
         id="cuentaRegresiva"
         aria-label="Cuenta regresiva para el cumpleaños"
         aria-live="off"
@@ -182,43 +220,43 @@
       <div class="detalles-lista">
 
         <!-- FECHA -->
-        <article class="detalle">
+        <article class="detalle ts-card-item">
           <div class="detalle-icono" aria-hidden="true">📅</div>
 
           <div>
-            <h3>Fecha de la misión</h3>
+            <h3>Día de la misión</h3>
             <p>Sábado 7 de noviembre de 2026</p>
           </div>
         </article>
 
         <!-- HORA -->
-        <article class="detalle">
-          <div class="detalle-icono" aria-hidden="true">🕒</div>
+        <article class="detalle ts-card-item">
+          <div class="detalle-icono" aria-hidden="true">⏰</div>
 
           <div>
-            <h3>Hora de inicio</h3>
-            <p>3:00 de la tarde</p>
+            <h3>Hora de reunión</h3>
+            <p>3:00 PM (Hora del Oeste y del Espacio)</p>
           </div>
         </article>
 
         <!-- UBICACIÓN -->
-        <article class="detalle">
+        <article class="detalle ts-card-item">
           <div class="detalle-icono" aria-hidden="true">📍</div>
 
           <div>
-            <h3>Punto de encuentro</h3>
+            <h3>Base Secreta / Cuartel General</h3>
 
             <p>
               Avenida Bolívar 30-58, Diagonal 1, zona 3
             </p>
 
             <a
-              class="enlace-mapa boton-waze"
+              class="enlace-mapa boton-waze ts-boton-waze"
               href="https://waze.com/ul/h9fxehj875"
               target="_blank"
               rel="noopener noreferrer"
             >
-              🚗 Llegar con Waze ↗
+              🚗 Abrir ruta en Waze ↗
             </a>
           </div>
         </article>
@@ -228,16 +266,16 @@
 
 
     <!-- REGALITOS -->
-    <section class="seccion regalos-card" id="regalitos">
+    <section class="seccion regalos-card ts-seccion-regalos" id="regalitos">
       <div class="regalos-icono" aria-hidden="true">🎁</div>
 
-      <span class="regalos-etiqueta">UN DETALLE ESPECIAL</span>
+      <span class="regalos-etiqueta">DETALLE PARA NUESTRA SHERIFF</span>
 
-      <h2>¡Un pequeño detalle para Mia!</h2>
+      <h2>Un regalo para Mia</h2>
 
       <p class="regalos-mensaje">
-        Tu presencia es el mejor regalo.
-        Pero, si deseas tener un detalle con Mia,
+        Tu presencia es nuestro mejor regalo.
+        Pero si deseas darle un detalle a nuestra cumpleañera Mia,
         agradecemos de corazón los regalitos en
         <strong>efectivo o ropita</strong>.
       </p>
@@ -245,23 +283,23 @@
       <div class="regalos-decoracion" aria-hidden="true">
         <span>⭐</span>
         <span>👗</span>
-        <span>💛</span>
+        <span>🤠</span>
       </div>
 
       <p class="regalos-gracias">
-        ¡Gracias por ser parte de esta aventura tan especial!
+        ¡Gracias por ser un gran amigo en esta aventura!
       </p>
     </section>
 
 
     <!-- CONFIRMACIÓN DE ASISTENCIA -->
-    <section class="seccion confirmacion" id="confirmacion">
-      <div class="icono-seccion" aria-hidden="true">💌</div>
+    <section class="seccion confirmacion ts-seccion-confirmar" id="confirmacion">
+      <div class="icono-seccion" aria-hidden="true">🚀</div>
 
-      <h2>¿Te unes a la aventura?</h2>
+      <h2>¿Te unes al equipo de Mia?</h2>
 
       <p>
-        Indícanos cuántas personas nos acompañarán.
+        ¡Confirma tu asistencia para preparar tu traje espacial!
       </p>
 
       <div class="cantidad-asistentes">
@@ -280,7 +318,7 @@
         </select>
 
         <label for="ninos">
-          🧸 ¿Cuántos niños asistirán?
+          🧸 ¿Cuántos niños / juguetes asistirán?
         </label>
 
         <select id="ninos" name="ninos">
@@ -295,29 +333,29 @@
       </div>
 
       <a
-        class="boton boton-verde"
+        class="boton boton-verde ts-boton-confirmar"
         id="confirmar"
         href="#confirmacion"
       >
-        ¡Confirmar asistencia! 💚
+        ¡Confirmar asistencia por WhatsApp! 📲
       </a>
 
       <p class="nota-confirmacion">
-        ¡Nos encantará celebrar contigo!
+        ¡Nos vemos en el infinito y más allá! 🌌
       </p>
     </section>
 
 
     <!-- PIE DE PÁGINA -->
-    <footer>
+    <footer class="ts-footer">
       <div class="footer-estrellas" aria-hidden="true">
-        ⭐ 🚀 ☁️ 🤠 ⭐
+        ⭐ 🚀 ☁️ 🤠 👽
       </div>
 
-      <p>Hecho con mucho amor para Mia</p>
+      <p>Celebración de Cumpleaños N° 6 de Mia</p>
 
       <p class="footer-frase">
-        ¡Hasta el infinito y más allá!
+        ¡Al infinito y más allá! 🚀
       </p>
     </footer>
 
