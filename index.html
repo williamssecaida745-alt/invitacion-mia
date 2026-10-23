@@ -18,12 +18,12 @@
 
   <!-- PORTADA -->
   <div class="portada" id="portada">
-    <div class="nube nube-1"></div>
-    <div class="nube nube-2"></div>
-    <div class="nube nube-3"></div>
+    <div class="nube nube-1" aria-hidden="true"></div>
+    <div class="nube nube-2" aria-hidden="true"></div>
+    <div class="nube nube-3" aria-hidden="true"></div>
 
     <div class="portada-tarjeta">
-      <div class="estrella">⭐</div>
+      <div class="estrella" aria-hidden="true">⭐</div>
 
       <p class="etiqueta">¡ATENCIÓN, JUGUETES!</p>
 
@@ -58,8 +58,21 @@
   <!-- INVITACIÓN -->
   <main class="invitacion" id="invitacion">
 
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO PRINCIPAL -->
     <header class="hero">
+
+      <!-- DECORACIONES ESPACIALES -->
+      <div class="decoracion-espacial" aria-hidden="true">
+        <span class="decoracion estrella-espacial estrella-1">✦</span>
+        <span class="decoracion estrella-espacial estrella-2">★</span>
+        <span class="decoracion estrella-espacial estrella-3">✧</span>
+        <span class="decoracion alien alien-1">👽</span>
+        <span class="decoracion alien alien-2">👽</span>
+        <span class="decoracion cohete-espacial">🚀</span>
+        <span class="decoracion sombrero-woody">🤠</span>
+        <span class="decoracion planeta-espacial">🪐</span>
+      </div>
+
       <div class="insignia">⭐ ¡ESTÁS INVITADO! ⭐</div>
 
       <p class="texto-superior">¡Prepárate para despegar!</p>
@@ -71,12 +84,13 @@
       </p>
 
       <div class="ilustracion" aria-label="Decoración de juguetes">
-        <span class="juguete woody">🤠</span>
-        <span class="juguete buzz">🚀</span>
-        <span class="juguete oso">🧸</span>
-        <span class="juguete estrella">⭐</span>
+        <span class="juguete woody" aria-hidden="true">🤠</span>
+        <span class="juguete buzz" aria-hidden="true">🚀</span>
+        <span class="juguete oso" aria-hidden="true">🧸</span>
+        <span class="juguete estrella" aria-hidden="true">⭐</span>
       </div>
 
+      <!-- FECHA -->
       <div class="fecha-tarjeta">
         <p class="dia-semana">SÁBADO</p>
         <strong>07</strong>
@@ -107,14 +121,15 @@
         id="musicaInvitacion"
         src="./musica.mp3"
         loop
-        preload="auto"
+        preload="none"
       ></audio>
+
     </header>
 
 
     <!-- MENSAJE DE BIENVENIDA -->
     <section class="seccion mensaje" id="bienvenida">
-      <div class="icono-seccion">☁️</div>
+      <div class="icono-seccion" aria-hidden="true">☁️</div>
 
       <h2>¡Una aventura te espera!</h2>
 
@@ -129,16 +144,20 @@
     </section>
 
 
-    <!-- DETALLES DEL EVENTO -->
+    <!-- DETALLES DEL EVENTO Y CUENTA REGRESIVA -->
     <section class="seccion" id="detalles">
-      <div class="icono-seccion">⏳</div>
+      <div class="icono-seccion" aria-hidden="true">⏳</div>
 
       <h2>Cuenta regresiva</h2>
 
       <p class="subtitulo">¡La misión está por comenzar!</p>
 
-      <div class="cuenta-regresiva" id="cuentaRegresiva">
-
+      <div
+        class="cuenta-regresiva"
+        id="cuentaRegresiva"
+        aria-label="Cuenta regresiva para el cumpleaños"
+        aria-live="off"
+      >
         <div class="contador">
           <strong id="dias">00</strong>
           <span>Días</span>
@@ -158,14 +177,13 @@
           <strong id="segundos">00</strong>
           <span>Segundos</span>
         </div>
-
       </div>
 
       <div class="detalles-lista">
 
         <!-- FECHA -->
         <article class="detalle">
-          <div class="detalle-icono">📅</div>
+          <div class="detalle-icono" aria-hidden="true">📅</div>
 
           <div>
             <h3>Fecha de la misión</h3>
@@ -175,7 +193,7 @@
 
         <!-- HORA -->
         <article class="detalle">
-          <div class="detalle-icono">🕒</div>
+          <div class="detalle-icono" aria-hidden="true">🕒</div>
 
           <div>
             <h3>Hora de inicio</h3>
@@ -185,7 +203,7 @@
 
         <!-- UBICACIÓN -->
         <article class="detalle">
-          <div class="detalle-icono">📍</div>
+          <div class="detalle-icono" aria-hidden="true">📍</div>
 
           <div>
             <h3>Punto de encuentro</h3>
@@ -238,7 +256,7 @@
 
     <!-- CONFIRMACIÓN DE ASISTENCIA -->
     <section class="seccion confirmacion" id="confirmacion">
-      <div class="icono-seccion">💌</div>
+      <div class="icono-seccion" aria-hidden="true">💌</div>
 
       <h2>¿Te unes a la aventura?</h2>
 
@@ -307,6 +325,7 @@
 
 </body>
 </html>
+
 
 
 
