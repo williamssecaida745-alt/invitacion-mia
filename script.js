@@ -11,7 +11,7 @@ const confirmar = document.getElementById("confirmar");
 // ===================================
 
 // Guatemala: código de país 502 + 8 dígitos.
-const numeroWhatsApp = "50235804695";
+const numeroWhatsApp = "50258126573";
 
 // ===================================
 // FECHA DEL EVENTO
