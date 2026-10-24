@@ -1220,5 +1220,48 @@ footer p {
   }
 }
 
+/* =====================================
+   DECORACIONES FLOTANTES A LOS COSTADOS
+===================================== */
+
+.decoraciones-costados {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dec-costado {
+  position: absolute;
+  font-size: 2.8rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.15));
+  animation: flotarDecoracion 4s ease-in-out infinite;
+}
+
+/* Posiciones en el lado izquierdo y derecho */
+.deco-1 { top: 12%; left: 35px; animation-delay: 0s; }
+.deco-2 { top: 38%; left: 15px; animation-delay: 1s; }
+.deco-3 { bottom: 25%; left: 30px; animation-delay: 2s; }
+.deco-4 { top: 18%; right: 35px; animation-delay: 0.5s; }
+.deco-5 { top: 48%; right: 15px; animation-delay: 1.5s; }
+.deco-6 { bottom: 22% sacerdote; right: 30px; animation-delay: 2.5s; }
+.deco-7 { top: 72%; left: 20px; animation-delay: 3s; }
+
+@keyframes flotarDecoracion {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(8deg);
+  }
+}
+
+/* Ocultar en pantallas pequeñas para limpiar la vista en celulares */
+@media (max-width: 900px) {
+  .decoraciones-costados {
+    display: none;
+  }
+}
 
 
