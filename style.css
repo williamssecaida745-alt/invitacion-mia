@@ -1239,25 +1239,58 @@ footer p {
   animation: flotarDecoracion 4s ease-in-out infinite;
 }
 
-/* Posiciones en el lado izquierdo y derecho */
-.deco-1 { top: 12%; left: 35px; animation-delay: 0s; }
-.deco-2 { top: 38%; left: 15px; animation-delay: 1s; }
-.deco-3 { bottom: 25%; left: 30px; animation-delay: 2s; }
-.deco-4 { top: 18%; right: 35px; animation-delay: 0.5s; }
-.deco-5 { top: 48%; right: 15px; animation-delay: 1.5s; }
-.deco-6 { bottom: 22% sacerdote; right: 30px; animation-delay: 2.5s; }
-.deco-7 { top: 72%; left: 20px; animation-delay: 3s; }
+/* =====================================
+   DECORACIONES FLOTANTES EN MOVIMIENTO CONTINUO
+===================================== */
 
-@keyframes flotarDecoracion {
-  0%, 100% {
-    transform: translateY(0) rotate(-8deg);
+.decoraciones-costados {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dec-costado {
+  position: absolute;
+  font-size: 2.6rem;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+  animation: flotarContinuo 12s linear infinite;
+  opacity: 0.85;
+}
+
+/* --- COSTADO IZQUIERDO --- */
+.pos-1  { left: 3%;  top: 5%;   animation-delay: 0s; }
+.pos-2  { left: 8%;  top: 22%;  animation-delay: -3s; }
+.pos-3  { left: 2%;  top: 40%;  animation-delay: -6s; }
+.pos-4  { left: 9%;  top: 58%;  animation-delay: -9s; }
+.pos-5  { left: 4%;  top: 75%;  animation-delay: -2s; }
+.pos-6  { left: 10%; top: 88%;  animation-delay: -5s; }
+.pos-7  { left: 2%;  top: 98%;  animation-delay: -8s; }
+
+/* --- COSTADO DERECHO --- */
+.pos-8  { right: 3%;  top: 8%;   animation-delay: -1s; }
+.pos-9  { right: 9%;  top: 25%;  animation-delay: -4s; }
+.pos-10 { right: 2%;  top: 42%;  animation-delay: -7s; }
+.pos-11 { right: 8%;  top: 60%;  animation-delay: -10s; }
+.pos-12 { right: 4%;  top: 78%;  animation-delay: -3.5s; }
+.pos-13 { right: 10%; top: 90%;  animation-delay: -6.5s; }
+.pos-14 { right: 2%;  top: 99%;  animation-delay: -9.5s; }
+
+/* Animación de oscilación y elevación suave */
+@keyframes flotarContinuo {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.95);
   }
   50% {
-    transform: translateY(-15px) rotate(8deg);
+    transform: translateY(-25px) rotate(12deg) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(0.95);
   }
 }
 
-/* Ocultar en pantallas pequeñas para limpiar la vista en celulares */
+/* Ocultar en pantallas de celular para evitar saturación visual */
 @media (max-width: 900px) {
   .decoraciones-costados {
     display: none;
